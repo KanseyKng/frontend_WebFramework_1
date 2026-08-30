@@ -11,7 +11,9 @@ type DetailPageProps = {
 
 export default async function TodoDetailPage({ params }: DetailPageProps) {
   const { id } = await params;
+  console.log('ID dari params:', id);
   const todo = await getTodoDetail(id);
+  console.log('Todo ditemukan:', todo);
 
   if (!todo) {
     return <TaskNotFound id={id} />;

@@ -1,11 +1,12 @@
-'use client'; // jika perlu interaktivitas
+'use client';
 
 import React from 'react';
+import Link from 'next/link'; // <-- TAMBAHKAN IMPOR INI
 import { Todo } from '@/Types/todo';
 
 interface TodoItemProps {
   todo: Todo;
-  onToggle?: (id: number) => void; // opsional, untuk toggle status
+  onToggle?: (id: number) => void;
 }
 
 export default function TodoItem({ todo, onToggle }: TodoItemProps) {
@@ -38,7 +39,14 @@ export default function TodoItem({ todo, onToggle }: TodoItemProps) {
           {todo.title}
         </span>
       </div>
-      {/* Jika ingin tambahan aksi seperti edit/hapus, bisa ditambahkan di sini */}
+
+      {/* 👇 TAMBAHKAN LINK "Detail" DI SINI */}
+      <Link
+        href={`/task/${todo.id}`}
+        className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline shrink-0"
+      >
+        Detail
+      </Link>
     </li>
   );
 }

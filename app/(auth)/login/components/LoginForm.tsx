@@ -31,11 +31,12 @@ export default function LoginForm() {
     </div>
 
     <div className="pt-2">
-    <Link href="/">
-    <a className="block text-center w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
+    <Link 
+    href="/" 
+    className="block text-center w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded"
+  >
     Login
-    </a>
-    </Link>
+  </Link>
     </div>
     </div>
   );
