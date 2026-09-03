@@ -31,18 +31,13 @@ export const todos: Todo[] = [
   },
 ];
 
-// Fungsi untuk mengambil semua data todos (halaman Home)
 export async function getTodos(): Promise<Todo[]> {
   await new Promise((resolve) => setTimeout(resolve, 500));
   return todos;
 }
 
-// Fungsi untuk mengambil detail 1 todo berdasarkan ID (halaman Detail)
 export async function getTodoDetail(id: string | number): Promise<Todo | null> {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const todo = todos.find((item) => item.id === Number(id));
-  if (!todo) {
-    return null;
-  }
-  return todo;
+  return todo || null;
 }
